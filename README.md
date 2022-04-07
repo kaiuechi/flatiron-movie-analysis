@@ -1,71 +1,79 @@
-# Phase 1 Project Template - Minimum Viable Product (MVP)
+# Movie Analysis Project
+**Author:** Kai Uechi
+![](images/image3.jpg)
 
-![blueprint](images/blueprint.png)
-
-This repository is like a blueprint, providing structure for your first End of Phase Project. We suggest you base your Phase 1 project off of this repository so you can focus less on formatting and organization, and more on the _analysis and communication skills_ that will support your progress through the course. This template is designed to make your project portfolio-ready in order to impress the future employers who will review it. 
-
-## Repository Contents
-
-Below is a list of the contents of this repository - instructions for using them are in the next section.
-
-- `README.md`: The README for this repo branch explaining it's contents - you're reading it now
-- `TEMPLATE_README.md`: An example of a project README that provides a brief overview of your whole project
-- `dsc-phase1-project-template.ipynb`: A starter Jupyter Notebook with headings, code examples and guiding questions
-- `DS_Project_Presentation_Template.pdf`: A starter slide deck presenting your project - here is an [editable version](https://docs.google.com/presentation/d/1PaiH1bleXnhiPjTPsAXQSiAK0nkaRlseQIr_Yb-0mz0/copy)
-- `data` folder: A folder for the data you reference with your code
-- `images` folder: A folder for the images you reference in your files 
-- `.gitignore`: A hidden file that tells git to not track certain files and folders
-
-## Instructions For Using This Repository
-
-### Fork This Repository
-
-**For a group project**, have only one team member do these steps:
-
-1. Fork this repository to your personal account
-   - In GitHub, go to this repository and click the "Fork" button in the upper right
-   
-2. Change the name of your fork of this repo to a _descriptive_ name of your choosing
-   - In GitHub, go to your fork of this repo -> "Settings" -> "Options" -> "Repository Name" -> "Rename"
-   - Make the name descriptive, since potential employers will read it. Ex: "Microsoft-Movie-Analysis" is better than "Project-1"
-
-3. Use `git clone` to clone your fork of this repo to your local computer
-
-4. **For a group project**, add team members as collaborators to your fork of this repo
-   - In GitHub, go to your fork of this repo -> "Settings" -> "Manage Access" -> "Invite Teams or People"
-   - Add your project team members as collaborators & send them the repo GitHub URL
-
-### Work In Your Fork Of This Repository
-
-- Work in the repo clone that you created on your local machine
-- Start writing and coding in the Jupyter Notebook `dsc-phase1-project-template.ipynb`
-- Fill in the README template in `TEMPLATE_README.md`
-- Use `git add`, `git commit`, and `git push` often to update your repo in GitHub
-   - For a refresher on how to do this and why it's important, review Topic 2: Bash and Git
-
-### Use The Slide Template
-
-1. Go to [this link](https://docs.google.com/presentation/d/1PaiH1bleXnhiPjTPsAXQSiAK0nkaRlseQIr_Yb-0mz0/copy) to make an editable copy of the slide deck in your own Google Drive account
-2. Go to "Slide," select "Change Theme," and pick a theme you like so your presentation doesn't look like everyone else's
-3. **For a group project**, click the "Share" button and add your teammates as editors
-
-### Tidy Up Your Project
-
-- Change the file name of the Jupyter Notebook (`dsc-phase1-project-template.ipynb`) to something more descriptive
-- Save an appropriately-named PDF version of your slide deck to the repository
-- Rename the template readme you've been working in by running `git mv TEMPLATE_README.md README.md`
-- Delete unnecessary files from the repo using `git rm`
-   - The presentation PDF: `DS_Project_Presentation_Template.pdf`
-   - This README file: `README.md`
-   - Any unused data files in the `data` folder
-   - Any unused images in the `images` folder
-
-### Submit Your Project
-
-To submit your project, please follow the instructions in the "Project Submission & Review" page in the Milestones course.
-
+## Overview
 ***
-### Notes
+This project is an analysis of movie data to find what types of movies are most profitable. The analysis shows that a film's release month, runtime, and genre correlate to its return on investment. Using this analysis, Microsoft's movie studio can focus on creating animated adventure films between 130-140 minutes long to release in either January or July. These films are likely to be more profitable.
 
-- The visualizations in the notebook use best practices for visualization that you should try to emulate. For example, they have clear axes, descriptive titles, and appropriate number formatting
-- The `dsc-phase1-project-template.ipynb` is intended to be the _final version_ of your project. The first notebook you create will not look like this. You are encouraged to start with a very disorderly notebook and clean it as you go
+
+## Business Problem
+***
+Microsoft's new movie studio needs to decide on what type of films to create. By analyzing what films are currently performing well, the studio can focus its resources into films that are likely to have the highest return. Using movie data from several sources, I examine how genre, runtime, and time of release affects a film's return on investment.
+
+## Data
+***
+This project uses data from several sources: IMDB (supplying runtime and genre), Box Office Mojo (supplying financial data), and The Numbers (supplying additional financial data, release date, and production budget).
+
+## Methods
+***
+The data from these sources has been joined together and trimmed of the many movies that lacked financial data, since such data points are useless in the context of this analysis. Additionally, duplicates and outliers have been removed from the data set.
+
+## Results
+***
+### Genre Vs Return on Investment
+
+Most genres have little correlation with a film's return on investment, but several categories stand out:
+* Adventure
+* Animation
+* Comedy
+* Drama
+
+![](images/genre_corr_bar.png)
+
+### Runtime Vs Return on Investment
+
+Most movies last between 75 to 125 minutes, and longer movies tend to have better returns.
+However, this trend stops past the 140 minute mark.
+
+![](images/runtime_roi.png)
+
+### Release Month Vs Return on Investment
+
+Most movies tend to release near the end of the year, especially in October and December.
+However, the average return on investment is highest in January and July.
+
+![](images/releasemonth_roi.png)
+
+## Conclusions
+***
+Three main points can be concluded from this analysis:
+* **Adventure, Animation, and Comedy films should be prioritized.** Additionally, Drama and Documentary films should be avoided. Genres besides these have little impact on a film's return on investment.
+* **Films should aim to have a runtime of between 130-140 minutes.** A runtime longer than 140 minutes is likely to be a detriment.
+* **Films should prioritize releasing in January or July.** Films should also avoid releasing in June, September, October, or December. 
+
+
+### Next Steps
+
+The following steps are likely to expand and improve upon this analysis:
+* **Gather more data, especially regarding a film's production budget.** This analysis was performed on a comparatively small set of movies due to a lack of data on production budget. More data will improve the accuracy of findings.
+* **Group results by year to predict trends.** By grouping the performance of specific genres or release months to each year, results will not be skewed by old trends. (For instance, a genre that was very popular several years ago, but is no longer profitable.)
+
+## For More Information
+***
+Review the [analysis notebook](./MovieAnalysis.ipynb) or the [presentation pdf](./MovieAnalysisProjectPresentation.pdf) for more information.
+
+For any additional questions, please contact **Kai Uechi (kaiuechi@gmail.com)**
+
+## Repository Structure
+***
+`
+├── code
+│   └── EDA.ipynb  -An exploratory data analysis notebook from earlier in the project
+├── data  -Contains .csv/.tsv data files
+│   └── zippedData  -Contains compressed copies of .csv/.tsv data files
+├── images  -Contains images used in README and MovieAnalysis notebook
+├── README.md  -Overview of analysis and repo contents
+├── MovieAnalysisProjectPresentation.pdf  -A slide deck for presenting this project
+└── MovieAnalysis.ipynb  -The final notebook for this project.
+`
