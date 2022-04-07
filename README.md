@@ -68,11 +68,11 @@ For any additional questions, please contact **Kai Uechi (kaiuechi@gmail.com)**
 ## Repository Structure
 ***
 
-`├── code`
-`│   └── EDA.ipynb  -An exploratory data analysis notebook from earlier in the project`
-`├── data  -Contains .csv/.tsv data files`
-`│   └── zippedData  -Contains compressed copies of .csv/.tsv data files`
-`├── images  -Contains images used in README and MovieAnalysis notebook`
-`├── README.md  -Overview of analysis and repo contents`
-`├── MovieAnalysisProjectPresentation.pdf  -A slide deck for presenting this project`
-`└── MovieAnalysis.ipynb  -The final notebook for this project.`
+    `├── code`
+    `│   └── EDA.ipynb  -An exploratory data analysis notebook from earlier in the project`
+    `├── data  -Contains .csv/.tsv data files`
+    `│   └── zippedData  -Contains compressed copies of .csv/.tsv data files`
+    `├── images  -Contains images used in README and MovieAnalysis notebook`
+    `├── README.md  -Overview of analysis and repo contents`
+    `├── MovieAnalysisProjectPresentation.pdf  -A slide deck for presenting this project`
+    `└── MovieAnalysis.ipynb  -The final notebook for this project.`
